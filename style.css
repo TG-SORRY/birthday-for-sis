@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to top right, #ffecd2 0%, #fcb69f 100%);
+    overflow: hidden;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3em;
+    color: #ff4081;
+    text-shadow: 2px 2px #fff;
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: #333;
+}
+
+button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.slideshow {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slide {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
