@@ -11,18 +11,21 @@
     <div class="hero">
         <h1>Happy 28th Birthday! 🎂</h1>
         <p>Wishing you all the love and happiness in the world 💖</p>
+
         <button id="musicBtn" onclick="toggleMusic()">🎵 Play Music</button>
+        <p id="countdown"></p>
     </div>
 
     <div class="slideshow">
-        <img src="assets/photos/photo1.jpeg" alt="Birthday Memory" class="slide">
+        <img id="slideImage" src="assets/photos/photo1.jpeg" alt="Memory" class="slide">
     </div>
+
+    <button class="share-btn" onclick="sharePage()">🔗 Share This Surprise</button>
 
     <canvas id="confetti-canvas"></canvas>
 
     <audio id="birthdaySong" loop preload="auto">
         <source src="assets/music/birthday.mp3" type="audio/mpeg">
-        Your browser does not support audio.
     </audio>
 
     <script src="script.js"></script>
