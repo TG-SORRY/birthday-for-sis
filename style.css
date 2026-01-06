@@ -2,11 +2,11 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(to top right, #ffecd2 0%, #fcb69f 100%);
-    overflow: hidden;
+    overflow-x: hidden;
     text-align: center;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     padding: 50px 20px;
     animation: fadeIn 2s ease-in-out;
@@ -19,11 +19,11 @@ body {
 }
 
 .hero p {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: #333;
 }
 
-/* BUTTON */
+/* BUTTONS */
 button {
     background-color: #ff4081;
     color: white;
@@ -33,19 +33,23 @@ button {
     cursor: pointer;
     border-radius: 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
+    margin-top: 15px;
 }
 
 button:hover {
     transform: scale(1.08);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.share-btn {
+    margin-bottom: 40px;
 }
 
 /* SLIDESHOW */
 .slideshow {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin: 30px 0;
 }
 
 .slide {
@@ -55,7 +59,21 @@ button:hover {
     box-shadow: 0 5px 25px rgba(0,0,0,0.3);
 }
 
-/* CONFETTI CANVAS */
+/* POPUP */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    z-index: 999;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* CONFETTI */
 canvas {
     position: fixed;
     top: 0;
@@ -64,18 +82,22 @@ canvas {
     pointer-events: none;
 }
 
-/* ANIMATION */
+/* HEART ANIMATION */
+@keyframes floatUp {
+    to {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* MOBILE FIX */
+/* MOBILE */
 @media (max-width: 600px) {
     .hero h1 {
         font-size: 2.2em;
-    }
-    .hero p {
-        font-size: 1.2em;
     }
 }
