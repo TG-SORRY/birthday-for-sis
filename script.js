@@ -3,6 +3,10 @@ function toggleMusic() {
     const audio = document.getElementById("birthdaySong");
     const btn = document.getElementById("musicBtn");
 
+    if (navigator.vibrate) {
+    navigator.vibrate(40);
+    }
+    
     if (audio.paused) {
         audio.play();
         btn.textContent = "⏸ Pause Music";
@@ -28,7 +32,7 @@ setTimeout(() => {
 }, 4000);
 
 // ⏳ COUNTDOWN (CHANGE DATE HERE)
-const birthdayDate = new Date("2026-01-8T00:00:00").getTime();
+const birthdayDate = new Date("2026-01-08T00:00:00").getTime();
 
 setInterval(() => {
     const now = new Date().getTime();
