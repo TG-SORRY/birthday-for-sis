@@ -12,7 +12,7 @@ function toggleMusic() {
     }
 }
 
-// 🎁 SURPRISE POPUP
+// 🎁 SURPRISE POPUP (after 4s)
 setTimeout(() => {
     const popup = document.createElement("div");
     popup.className = "popup";
@@ -27,19 +27,22 @@ setTimeout(() => {
     document.body.appendChild(popup);
 }, 4000);
 
-// ⏳ COUNTDOWN (change date)
-const birthdayDate = new Date("2026-01-8").getTime();
+// ⏳ COUNTDOWN (CHANGE DATE HERE)
+const birthdayDate = new Date("2026-01-8T00:00:00").getTime();
+
 setInterval(() => {
     const now = new Date().getTime();
     const diff = birthdayDate - now;
+    const countdown = document.getElementById("countdown");
 
     if (diff > 0) {
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        document.getElementById("countdown").innerText =
-            `🎉 ${days} days to go!`;
+        countdown.innerText = `🎉 ${days} days to go!`;
     } else {
-        document.getElementById("countdown").innerText =
-            "🎂 Today is the special day!";
+        countdown.innerText = "🎂 TODAY IS YOUR BIRTHDAY 🎉💖";
+        countdown.style.fontSize = "22px";
+        countdown.style.color = "#ff4081";
+        countdown.style.fontWeight = "bold";
     }
 }, 1000);
 
@@ -63,29 +66,17 @@ const images = [
     "assets/photos/photo2.jpeg",
     "assets/photos/photo3.jpeg"
 ];
-let current = 0;
 
+let current = 0;
 setInterval(() => {
     current = (current + 1) % images.length;
     document.getElementById("slideImage").src = images[current];
 }, 3000);
 
-// 🔗 SHARE
-function sharePage() {
-    if (navigator.share) {
-        navigator.share({
-            title: "Happy Birthday 🎉",
-            text: "A special birthday surprise 🎂💖",
-            url: window.location.href
-        });
-    } else {
-        alert("Copy the link and share it 💌");
-    }
-}
-
 // 🎊 CONFETTI
 const canvas = document.getElementById("confetti-canvas");
 const ctx = canvas.getContext("2d");
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -105,6 +96,7 @@ for (let i = 0; i < 120; i++) {
 
 function drawConfetti() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     pieces.forEach(p => {
         ctx.beginPath();
         ctx.lineWidth = p.r / 2;
@@ -125,6 +117,7 @@ function drawConfetti() {
 
     requestAnimationFrame(drawConfetti);
 }
+
 drawConfetti();
 
 window.addEventListener("resize", () => {
