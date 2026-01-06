@@ -28,7 +28,7 @@ setTimeout(() => {
 }, 4000);
 
 // ⏳ COUNTDOWN (change date)
-const birthdayDate = new Date("2026-01-10").getTime();
+const birthdayDate = new Date("2026-01-8").getTime();
 setInterval(() => {
     const now = new Date().getTime();
     const diff = birthdayDate - now;
