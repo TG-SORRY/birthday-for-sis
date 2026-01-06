@@ -23,7 +23,7 @@ body {
     color: #333;
 }
 
-/* BUTTONS */
+/* BUTTON */
 button {
     background-color: #ff4081;
     color: white;
@@ -39,10 +39,6 @@ button {
 
 button:hover {
     transform: scale(1.08);
-}
-
-.share-btn {
-    margin-bottom: 40px;
 }
 
 /* SLIDESHOW */
@@ -73,7 +69,7 @@ button:hover {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* CONFETTI */
+/* CONFETTI CANVAS */
 canvas {
     position: fixed;
     top: 0;
@@ -90,9 +86,17 @@ canvas {
     }
 }
 
+/* FADE */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* FOOTER */
+.copyright {
+    margin: 40px 0 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 /* MOBILE */
